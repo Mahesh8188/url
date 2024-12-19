@@ -382,10 +382,12 @@ async def get_shortlink(link):
     if "http" == https:
         https = "https"
         link = link.replace("http", https)
-    url = f'https://udlinks.com'
-    params = {URL_SHORTNER_WEBSITE_API,
-              'url': link,
+    url = f'https://udlinks.com/shortLink'
+    params = {'token': URL_SHORTNER_WEBSITE_API,
+              'link': link,
+              'format': 'json'
               }
+
 
     try:
         async with aiohttp.ClientSession() as session:
